@@ -1,19 +1,17 @@
 @import "tailwindcss";
 
-/* next-themes toggles a `.dark` / `.light` class on <html>. Wire Tailwind's
-   `dark:` variant to that class instead of the prefers-color-scheme media query. */
+/* Dark mode is removed — the site is light-only. We keep `dark:` utilities
+   keyed to a `.dark` class that is never applied so they stay permanently
+   inert; without this, Tailwind v4 would fall back to the prefers-color-scheme
+   media query and re-activate dark styling on dark-OS visitors. */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ---------------------------------------------------------------------------
    Design tokens (semantic). RID (Rescue ID) is white-dominant — an Apple-Health
    style palette: white base, RID red as the accent, black for text/support only.
-   Canonical RID red: #e5242a (hover/darker: #c01d22). The site is light-first;
-   the legacy .dark/.light blocks both resolve to the white scheme so any
-   theme class lands on the same look.
+   Canonical RID red: #e5242a (hover/darker: #c01d22). Light-only.
 --------------------------------------------------------------------------- */
-:root,
-.dark,
-.light {
+:root {
   --background: #ffffff;
   --foreground: #0a0a0a;
   --muted: #6f6f6f;

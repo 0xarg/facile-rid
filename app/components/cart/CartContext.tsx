@@ -115,8 +115,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
 
   // Load any persisted cart once on mount (client only) to avoid SSR mismatch.
-  // Intentional hydration sync from an external store (localStorage) — same
-  // pattern as ThemeToggle's mount guard.
+  // Intentional hydration sync from an external store (localStorage).
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     try {

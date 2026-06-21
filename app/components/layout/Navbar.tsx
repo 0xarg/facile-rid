@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { cn } from "@/app/lib/cn";
-import { ThemeToggle } from "./ThemeToggle";
 import { Wordmark } from "./Wordmark";
 import { Button } from "@/app/components/ui/Button";
 
@@ -77,7 +76,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 w-full max-w-[1120px] items-center justify-between px-5 sm:px-8">
         <Link href="/" aria-label="Facile home" className="relative z-10">
-          <Wordmark surface="auto" priority />
+          <Wordmark surface="light" priority />
         </Link>
 
         {/* Desktop links with a sliding glass hover pill */}
@@ -141,7 +140,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-1.5">
-          <ThemeToggle />
           <button
             type="button"
             aria-label="Menu"
@@ -165,7 +163,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={reduce ? { duration: 0 } : { duration: 0.2, ease: "easeOut" }}
-            className="fixed inset-x-0 bottom-0 top-16 z-40 hidden bg-black/50 backdrop-blur-sm md:block"
+            className="fixed inset-x-0 bottom-0 top-16 z-40 hidden bg-background/40 backdrop-blur-xl backdrop-saturate-150 md:block"
           />
         )}
       </AnimatePresence>
@@ -183,14 +181,14 @@ export function Navbar() {
                 ? { duration: 0 }
                 : { duration: 0.22, ease: [0.22, 1, 0.36, 1] }
             }
-            className="absolute inset-x-0 top-full z-50 hidden border-b border-black/[0.06] bg-[#f6f5f2] md:block"
+            className="absolute inset-x-0 top-full z-50 hidden border-b border-white/30 bg-white/10 backdrop-blur-3xl backdrop-saturate-200 md:block"
           >
             <div className="mx-auto grid w-full max-w-[1120px] grid-cols-[1.4fr_1fr] gap-10 px-5 py-8 sm:px-8">
               {/* Left: grouped text-link columns */}
               <div className="grid grid-cols-3 gap-8">
                 {productMenu.map((col) => (
                   <div key={col.heading} className="flex flex-col gap-3">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0a0a0a]/40">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0a0a0a]/60">
                       {col.heading}
                     </span>
                     <div className="flex flex-col gap-2">
@@ -198,7 +196,7 @@ export function Navbar() {
                         <Link
                           key={item.label}
                           href={item.href}
-                          className="text-sm text-[#0a0a0a]/60 transition-colors hover:text-[#0a0a0a]"
+                          className="text-sm font-medium text-[#0a0a0a]/90 transition-colors hover:text-[#0a0a0a]"
                         >
                           {item.label}
                         </Link>
@@ -222,7 +220,7 @@ export function Navbar() {
                 <h3 className="font-display mt-4 text-base font-semibold text-[#0a0a0a]">
                   Your Profile, One Tap Away
                 </h3>
-                <p className="mt-1.5 text-sm text-[#0a0a0a]/50">
+                <p className="mt-1.5 text-sm text-[#0a0a0a]/70">
                   Share contacts, links, and socials instantly — no app needed.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2.5">
@@ -239,10 +237,28 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
+      {/* Glass-blur backdrop behind the open mobile drawer */}
+      <AnimatePresence>
+        {open && (
+          <motion.button
+            key="mobile-backdrop"
+            type="button"
+            aria-hidden
+            tabIndex={-1}
+            onClick={() => setOpen(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={reduce ? { duration: 0 } : { duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-x-0 bottom-0 top-16 z-30 bg-background/40 backdrop-blur-xl backdrop-saturate-150 md:hidden"
+          />
+        )}
+      </AnimatePresence>
+
       {/* Mobile menu */}
       <div
         className={cn(
-          "overflow-hidden border-border transition-[max-height] duration-300 md:hidden",
+          "relative z-40 overflow-hidden border-border bg-background/70 backdrop-blur-xl backdrop-saturate-150 transition-[max-height] duration-300 md:hidden",
           open ? "max-h-[640px] border-t" : "max-h-0"
         )}
       >
