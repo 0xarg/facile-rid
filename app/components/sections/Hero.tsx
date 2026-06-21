@@ -124,11 +124,11 @@ export function Hero() {
         initial={reduce ? false : { opacity: 0, y: 28 }}
         animate={reduce ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.18, ease: EASE }}
-        className="font-display mt-10 text-balance text-[64px] font-extrabold leading-[0.94] tracking-[-0.04em] text-foreground sm:text-[88px] lg:text-[112px]"
+        className="font-display mt-10 text-balance text-[56px] font-extrabold leading-[0.96] tracking-[-0.04em] text-foreground sm:text-[76px] lg:text-[96px]"
       >
-        One tap.
+        Your All In One Link
         <br />
-        <span className="text-gradient">Unforgettable.</span>
+        <span className="text-gradient">Just Got Better.</span>
       </motion.h1>
 
       {/* sub-copy */}
@@ -136,10 +136,10 @@ export function Hero() {
         initial={reduce ? false : { opacity: 0, y: 20 }}
         animate={reduce ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.26, ease: EASE }}
-        className="mt-6 max-w-[480px] text-pretty text-lg leading-relaxed text-foreground/60"
+        className="mt-6 max-w-[520px] text-pretty text-lg leading-relaxed text-foreground/60"
       >
-        The card that ships to your door. The profile that updates from
-        anywhere. Share everything in under a second — no app required.
+        A premium NFC card + digital profile built for founders, creators, and
+        professionals. Share everything instantly — no app required.
       </motion.p>
 
       {/* CTAs */}
