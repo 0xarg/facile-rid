@@ -5,17 +5,27 @@ import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rid.example.com"),
+  metadataBase: new URL("https://facile.me"),
   title: {
-    default: "RID — Your Rescue ID, one tap away",
-    template: "%s · RID",
+    default: "Facile RID — NFC Smart Card & Digital Profile",
+    template: "%s · Facile RID",
   },
   description:
-    "RID (Rescue ID) is the emergency profile that turns one tap into the medical and contact information first responders need — instantly, no app required.",
+    "Facile RID NFC smart cards let you share your contact, links, and socials with one tap — no app required. Free digital profile included. Ships in 2–3 days.",
+  keywords: [
+    "NFC business card",
+    "digital business card",
+    "smart card",
+    "NFC card",
+    "digital profile",
+    "tap to share",
+    "contactless card",
+    "metal business card",
+  ],
   openGraph: {
-    title: "RID — Your Rescue ID, one tap away",
+    title: "Facile RID — NFC Smart Card & Digital Profile",
     description:
-      "The Rescue ID that puts your emergency medical and contact info one tap away.",
+      "One tap shares your contact, links, and socials. No app required. Free digital profile. Ships in 2–3 days.",
     type: "website",
   },
 };

@@ -160,6 +160,16 @@ export function ProductCard({ product }: { product: Product }) {
           ))}
         </ul>
         <PriceRow price={product.price} id={product.id} />
+        <div className="flex flex-wrap gap-1 pt-1">
+          {["NFC", "QR", "Free profile"].map((chip) => (
+            <span
+              key={chip}
+              className="rounded-full border border-border bg-foreground/[0.03] px-2 py-0.5 text-[10px] font-medium text-foreground/40"
+            >
+              {chip}
+            </span>
+          ))}
+        </div>
       </div>
     </Card>
   );

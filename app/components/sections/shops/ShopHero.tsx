@@ -11,7 +11,7 @@ export function ShopHero() {
       {/* ambient brand glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-accent/12 blur-[150px]"
+        className="glow-red pointer-events-none absolute inset-x-0 top-0 -z-0 h-[600px]"
       />
       <Container size="xl" className="relative">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
@@ -20,11 +20,11 @@ export function ShopHero() {
               <span className="size-1.5 rounded-full bg-accent" />
               The Facile Store
             </span>
-            <h1 className="mt-6 font-display text-5xl font-extrabold leading-[0.98] tracking-tight sm:text-6xl md:text-[76px]">
-              Your card.
+            <h1 className="mt-6 font-display text-[56px] font-extrabold leading-[0.96] tracking-[-0.04em] sm:text-[68px] md:text-[80px]">
+              Every card.
               <br />
-              Your whole story,{" "}
-              <span className="text-gradient">one tap</span> away.
+              Every finish.{" "}
+              <span className="text-gradient">One profile</span>.
             </h1>
             <p className="mt-7 max-w-md text-balance text-lg leading-relaxed text-muted-foreground">
               Pick your finish, make it yours, and your digital profile goes

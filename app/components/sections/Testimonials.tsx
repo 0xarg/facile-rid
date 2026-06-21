@@ -114,7 +114,7 @@ export function Testimonials() {
                   className="flex h-full flex-col gap-3 p-6 transition duration-300 hover:-translate-y-0.5"
                 >
                   <Stars />
-                  <p className="text-[15px] italic leading-6 text-[#ccc]">
+                  <p className="text-[15px] italic leading-6 text-foreground/65">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="mt-auto pt-1">

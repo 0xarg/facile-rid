@@ -23,26 +23,26 @@ export function ProductsHero() {
       {/* Ambient accent bloom */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[-10%] -z-0 size-[760px] -translate-x-1/2 rounded-full bg-accent/[0.08] blur-[180px]"
+        className="glow-red pointer-events-none absolute inset-x-0 top-0 -z-0 h-[600px]"
       />
 
-      <Container size="lg" className="relative py-24 sm:py-28 lg:py-32">
+      <Container size="lg" className="relative py-28 sm:py-32 lg:py-36">
         {/* Centered copy */}
         <Reveal className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/45">
             <span aria-hidden className="size-1.5 rounded-full bg-accent" />
             The Facile collection
           </span>
 
-          <h1 className="mt-7 text-balance font-display text-5xl font-semibold leading-[1.03] tracking-tight text-[#0a0a0a] sm:text-6xl md:text-[76px]">
+          <h1 className="mt-7 text-balance font-display text-[60px] font-extrabold leading-[0.96] tracking-[-0.04em] text-[#0a0a0a] sm:text-[76px] md:text-[88px]">
             Carry one card.
             <br />
             Share <span className="text-gradient">everything</span>.
           </h1>
 
-          <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Matte, metal, or worn on your wrist — every Facile product taps to
-            your full profile in a second.
+          <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-foreground/55">
+            Matte, metal, or worn on your wrist — every Facile card ships with
+            NFC, laser QR, and a free digital profile. No app required.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">

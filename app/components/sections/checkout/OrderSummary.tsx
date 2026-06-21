@@ -78,10 +78,7 @@ export function OrderSummary({
   const { hydrated, product, qty, promo, totals } = useCart();
 
   return (
-    <Card
-      tone="glass"
-      className={cn("lg:sticky lg:top-28", className)}
-    >
+    <Card tone="glass" className={cn("lg:sticky lg:top-28", className)}>
       <div className="flex flex-col gap-5 p-6">
         <h2 className="text-lg font-semibold">Order Summary</h2>
 
@@ -140,7 +137,9 @@ export function OrderSummary({
                     className="flex items-center justify-between overflow-hidden text-[#e5242a]"
                   >
                     <dt>Discount{promo ? ` (${promo})` : ""}</dt>
-                    <dd className="tabular-nums">−{formatPrice(totals.discount)}</dd>
+                    <dd className="tabular-nums">
+                      −{formatPrice(totals.discount)}
+                    </dd>
                   </motion.div>
                 ) : null}
               </AnimatePresence>
@@ -149,6 +148,16 @@ export function OrderSummary({
                 <dd className="tabular-nums">{formatPrice(totals.shipping)}</dd>
               </div>
             </dl>
+
+            {/* free profile inclusion */}
+            <div className="flex items-center gap-2 rounded-xl bg-[#e5242a]/[0.06] px-3 py-2.5">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e5242a" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              <span className="text-[12px] font-medium text-[#e5242a]/80">
+                Free digital profile included
+              </span>
+            </div>
 
             <div className="h-px bg-border" />
 

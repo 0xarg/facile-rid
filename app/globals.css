@@ -298,3 +298,92 @@
     animation: none;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Revamp primitives — Apple Health × Facile editorial aesthetic
+--------------------------------------------------------------------------- */
+
+/* Full-bleed dark/ink sections */
+.section-ink {
+  background: #0a0a0a;
+  color: #f5f5f5;
+}
+
+/* Frosted glass chip — floating UI overlays on product images */
+.chip-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Ambient red product glow — place as absolute behind hero images */
+.glow-red {
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 55%,
+    rgba(229, 36, 42, 0.2) 0%,
+    transparent 70%
+  );
+}
+.glow-red-sm {
+  background: radial-gradient(
+    ellipse 55% 45% at 50% 65%,
+    rgba(229, 36, 42, 0.13) 0%,
+    transparent 65%
+  );
+}
+
+/* Large decorative ordinal numbers (Apple-style section backdrop) */
+.section-number {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 160px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(0, 0, 0, 0.04);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Gradient border card — premium dark tier */
+.card-gradient-border {
+  background:
+    linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+    linear-gradient(135deg, #e5242a, rgba(229, 36, 42, 0.35)) border-box;
+  border: 1.5px solid transparent;
+}
+
+/* Reverse marquee direction */
+.animate-marquee-reverse {
+  animation: facile-marquee 40s linear infinite reverse;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-reverse {
+    animation: none;
+  }
+}
+
+/* Analytics bar grow animation */
+@keyframes grow-bar {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+.animate-bar {
+  transform-origin: bottom;
+  animation: grow-bar 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-bar {
+    animation: none;
+  }
+}
